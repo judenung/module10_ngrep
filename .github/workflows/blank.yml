@@ -10,7 +10,7 @@ jobs:
           sudo apt-get install -y ngrep
       - name: Execute ngrep
         run: |
-          sudo ngrep "Ann Dercover" -N -t -q -I evidence1.pcap
+          sudo ngrep "Ann Dercover" -N -t -q -I "evidence1.pcap"
           # sudo ngrep -d any -q "GET" port 80 &
           # Run your test commands or traffic generation here
 
