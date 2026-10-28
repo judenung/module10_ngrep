@@ -25,7 +25,6 @@ jobs:
       - name: Execute ngrep
         run: |
           sudo ngrep "Ann Dercover" -N -t -q -I evidence1.pcap
-``
 
 # # This is a basic workflow to help you get started with Actions
 
