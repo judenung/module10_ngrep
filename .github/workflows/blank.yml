@@ -1,18 +1,31 @@
 name: Run ngrep
-on: [push]
+
+on:
+  push:
+
 jobs:
   sniff:
     runs-on: ubuntu-latest
+
     steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
       - name: Install ngrep
         run: |
           sudo apt-get update
           sudo apt-get install -y ngrep
+
+      - name: Check files
+        run: |
+          pwd
+          ls -la
+          find . -name "*.pcap"
+
       - name: Execute ngrep
         run: |
-          sudo ngrep "Ann Dercover" -N -t -q -I "evidence1.pcap"
-          # sudo ngrep -d any -q "GET" port 80 &
-          # Run your test commands or traffic generation here
+          sudo ngrep "Ann Dercover" -N -t -q -I evidence1.pcap
+``
 
 # # This is a basic workflow to help you get started with Actions
 
